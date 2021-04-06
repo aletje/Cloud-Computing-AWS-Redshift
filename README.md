@@ -22,6 +22,17 @@
     - `%run create_tables.py`
     - `%run etl.py`
 
+#### ETL pipeline
+The ETL pipeline `etl.py` uses Python and Postgres SQL to transfer data from S3:
+- Song JSON metadata files in `s3://udacity-dend/song_data` populates `stg_songs`
+- Log JSON files in `s3://udacity-dend/log_data` populates `stg_events`
+- A subset from `stg_songs` and `stg_events` populates the fact and dimension tables using SQL statements, here's an example:
+`INSERT INTO songplays (...) 
+SELECT col1, col2,..
+FROM stg_events e
+JOIN stg_songs s ON s.artist_name = e.artist
+WHERE e.page = 'NextSong'`
+
 ## sparkifydb
 
 #### Database schema design
@@ -36,17 +47,7 @@
     - `artists` are artists from music metadata database
     - `time` are timestamps of records in songplays broken down into specific units
     
-#### ETL pipeline
-The ETL pipeline `etl.py` uses Python and Postgres SQL to transfer data from S3:
-- Song JSON metadata files in `s3://udacity-dend/song_data` populates `stg_songs`
-- Log JSON files in `s3://udacity-dend/log_data` populates `stg_events`
-- A subset from `stg_songs` and `stg_events` populates the fact and dimension tables using SQL statements, here's an example:
-`INSERT INTO songplays (...) 
-SELECT col1, col2,..
-FROM stg_events e
-JOIN stg_songs s ON s.artist_name = e.artist
-WHERE e.page = 'NextSong'`
-
+    
 #### Example - analytical query
 ##### Count users and their level for the service
 `SELECT count(d.user_id) as cnt_user, d.level
