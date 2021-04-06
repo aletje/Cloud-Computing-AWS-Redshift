@@ -1,5 +1,5 @@
 # Summary 
-##### This database is designed for analysing song plays from the fictional Sparkify music streaming app. The sample project illustrating Cloud Datawarehousing on AWS and was made during my Udacity Nano Degree Course in Data Engineering
+##### The database is designed for analysing song plays from the fictional Sparkify music streaming app. The sample project is illustrating Cloud Datawarehousing on AWS and was made during my Udacity Nano Degree Course in Data Engineering.
 
 - Launched a new Redshift cluster using the Python Infrastructure as Code (IaC) boto3 library
 - Created a new IAM role with read access to S3
