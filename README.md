@@ -1,4 +1,5 @@
-# Project Summary 
+# Summary 
+### Sample project that illustrates the use of Cloud Datawarehousing on AWS
 - Launched a new Redshift cluster using the Python Infrastructure as Code (IaC) boto3 library
 - Created a new IAM role with read access to S3
 - Created 2 staging tables in Redshift Postgres database
