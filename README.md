@@ -22,9 +22,7 @@
     - `%run create_tables.py`
     - `%run etl.py`
 
-# sparkifydb
-#### Purpose
-
+## sparkifydb
 
 #### Database schema design
 - Staging tables
