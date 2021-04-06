@@ -1,24 +1,30 @@
 # Summary 
-### Sample project that illustrates the use of Cloud Datawarehousing on AWS
+##### This database is designed for analysing song plays from the fictional Sparkify music streaming app. The sample project illustrating Cloud Datawarehousing on AWS and was made during my Udacity Nano Degree Course in Data Engineering
+
 - Launched a new Redshift cluster using the Python Infrastructure as Code (IaC) boto3 library
 - Created a new IAM role with read access to S3
-- Created 2 staging tables in Redshift Postgres database
-- Created 1 fact and 4 dimension tables in Redshift Postgres database
+- Created 2 staging tables in a Redshift Postgres database
+- Created 1 fact and 4 dimension tables in a Redshift Postgres database
 - Created an ETL pipeline that 
     - transfers data from S3 into the staging tables in Redshift
     - populates the fact and dimension tables
 - Provided 1 example query
 
-#### Running the script
+##### Notes
+- The `Song metadata` is a subset originally from `http://millionsongdataset.com/`.
+- The `Logdata` set is simulating user activity on a fictional music streaming app called Sparkify.
+- Both datasets resides in Udacity's S3 buckets and can be found here:
+    - `s3://udacity-dend/log_data`
+    - `s3://udacity-dend/song_data`
 
-##### ETL-job
+##### Running ETL-job
 - Open a new Ipython notebook and run the commands in the following order
     - `%run create_tables.py`
     - `%run etl.py`
 
 # sparkifydb
 #### Purpose
-This database is designed for analysing song plays from Sparkify app
+
 
 #### Database schema design
 - Staging tables
